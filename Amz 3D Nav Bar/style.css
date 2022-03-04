@@ -1,0 +1,318 @@
+/*------------Base-------------*/
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+
+*,
+*::before,
+*::after{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    font-family: 'Aldrich', sans-serif;
+    font-size: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*------------Navigation-------------*/
+
+.hamburger{
+    position: fixed;
+    top: 4rem;
+    right: 4rem;
+    cursor: pointer;
+    z-index: 2000;
+}
+.hamburger i{
+    font-size: 3rem;
+    background: linear-gradient(to right, #2af598 0%, #009efd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hamburger .fa-times{
+    display: none;
+}
+
+header::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.9);
+    transform: translate(-100%, -100%);
+    opacity: 0;
+    z-index: 999;
+    transition: opacity .6s, transform .6s;
+    transition-delay:.2s ;
+}
+
+.side-bar{
+    background-color: #1f253d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.6rem;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform .6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.nav-list{
+    list-style: none;
+}
+
+.nav-item{
+    position: relative;
+}
+.nav-item::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #2af598 0%, #009efd 100%);
+}
+
+.nav-link{
+    display: block;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, .4);
+    text-transform: uppercase;
+    line-height: 8rem;
+    letter-spacing: 3px;
+    transition: color .6s;
+}
+
+.nav-link:hover{
+    color: rgba(255, 255, 255, .8);
+}
+
+.nav-link.current{
+    color:#fff;
+}
+
+.nav-link i{
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.icon-link{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    transform: background-color .6s ;
+}
+
+.icon-link:hover{
+    background-color: rgba(0,0,0,.3);
+}
+
+.icon-link i{
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, .4);
+    margin: auto;
+    transition: color .2s;
+}
+
+.icon-link i:hover{
+
+    color: rgba(255, 255, 255,.8);
+}
+
+/*------------Main-------------*/
+
+main{
+
+    perspective: 100rem;
+    margin: 0;
+}
+
+.zoom-content{
+    transform-style: preserve-3d;
+    transition: transform .6s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    scroll-behavior: smooth;
+
+}
+
+section{
+    width: 100%;
+    height: 100vh;    
+}
+
+.active .fa-times{
+    display: block;
+}
+.active .fa-bars{
+    display: none;
+}
+
+
+header.active::before{
+    transform: translate(0,0);
+    opacity: 1;
+    transition: opacity .6s;
+}
+
+.active .side-bar{
+    transform:translateX(0);
+}
+
+.active .zoom-content{
+    transform: translate3d(0,0, -25rem);
+}
+
+
+
+/*------------Home-------------*/
+
+.home{
+    width: 100%;
+    height: 80vh;
+    background:linear-gradient(135deg, rgba(49,24,131,0.9) 0%, rgba(72,56,149,0.8) 100%) ,url(./images/header-bg.jpg);
+    background-position: center;
+    background-size: cover; 
+    position: relative;
+}
+
+.home::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:0;
+    width: 100%;
+    height: 18rem;
+    background: url(./images/wave-large.png) center no-repeat;
+    background-size: cover;
+}
+
+.container{
+    width: 70%;
+    height: 50vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo{
+    height: 11rem;
+    padding-top: 2rem;
+    border-bottom: 1px slategray solid;
+}
+.logo img{
+    height: 7.5rem;
+}
+
+.banner{
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    top: 60%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin-top: 6rem;
+}
+
+.banner h3{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.banner h1{
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 5px;
+}
+
+.banner p{
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.btn{
+    color: whitesmoke;
+    border-radius: 5%;
+    border: 1px solid tomato;
+    background-color: tomato;
+    padding: 1rem;
+    transition: .2s;
+}
+
+.btn:hover{
+    background-color: transparent;
+}
+
+
+@media screen and (max-width:500px) {
+
+    .hamburger{
+        top: 2.5rem;
+    }
+
+    .nav-link{
+        line-height: 5rem;
+    }
+
+    .side-bar{
+        width: 25rem;
+    }  
+  
+     .logo{
+        height: 7rem;
+    }
+    .logo img{
+        height:4rem;
+    }
+
+    
+    .home{
+       height: 85vh;
+     }
+
+    .home::before{
+        height: 8rem;
+    }
+    
+    .banner{
+        width: 100%;
+        margin: 4rem;
+    }
+    
+    .banner h3{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .banner h1{
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .banner p{
+        font-size: 1rem;
+    }
+
+}
