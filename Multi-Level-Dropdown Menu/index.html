@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Multi Level Dropdown</title>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+</head>
+<body>
+<!--Nav markup goes here-->
+<header>
+ <div class="container">
+    <nav>
+        <a href="http://" class="logo">
+            <i class="icon ion-md-restaurant"></i>
+        </a>
+
+        <ul class="nav-list">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Menu
+                    <i class="icon ion-md-arrow-dropdown"></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="#">Breakfast</a>
+                    </li>
+                    <li>
+                        <a href="#">Lunch
+                            <i class="icon ion-md-arrow-dropdown"></i>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Regular</a>
+                            </li>
+                            <li>
+                                <a href="#">Sprecial</a>
+                            </li>
+                            <li>
+                                <a href="#">Buffet
+                                    <i class="icon ion-md-arrow-dropdown"></i>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">Appitizer</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Main Course</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Desserts</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Dinner</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Our Chefs</a>
+            </li>
+            <li>
+                <a href="#">Galary</a>
+            </li>
+            <li>
+                <a href="#">Blogs</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li class="move-right btn">
+                <a href="#">Book a Table</a>
+            </li>
+        </ul>
+
+        <div class="menu-icons">
+            <i class="icon ion-md-menu"> </i>
+            <i class="icon ion-md-close"> </i>
+        </div>    
+    </nav>
+  </div>
+</header>
+
+<!--End nav-->
+
+<!--Hero-->
+<section class="hero">
+    <div class="text">
+        <h2>Proudly serving</h2>
+        <h1>Delicious Food Daily</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <a href="#" class="btn">Learn more</a>
+    </div>
+
+    <div class="side-bar">
+
+        <div class="side-box">
+            <div class="side-text">
+                Account
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+     
+        <div class="side-box">
+            <div class="side-text">
+                Cart
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-cart-plus"></i>
+            </div>
+        </div>
+    
+        <div class="side-box">
+            <div class="side-text">
+                Search Food
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-search-plus"></i>
+            </div>
+        </div>
+       
+        <div class="side-box">
+            <div class="side-text">
+                Favotite Dishes
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-coffee"></i>
+            </div>
+        </div>
+
+        <div class="side-box">
+            <div class="side-text">
+                Online Delivery
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-truck"></i>
+            </div>
+        </div>
+
+        <div class="side-box">
+            <div class="side-text">
+                Payment
+            </div>
+            <div class="side-icon">
+                <i class="fas fa-hand-holding-usd"></i>
+            </div>
+        </div>
+
+        <div class="side-box">
+            <div class="side-text">
+                Your Queries
+            </div>
+            <div class="side-icon">
+                <i class="fab fa-quora"></i>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="scripts.js"></script>
+</body>
+
+</html>

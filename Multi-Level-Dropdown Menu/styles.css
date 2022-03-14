@@ -1,0 +1,381 @@
+/*Nav css goes here*/
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Roboto',sans-serif;
+    font-size: 10px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;   
+}
+
+.container{
+    width: 100%;
+    max-width:117rem ;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+}
+
+.menu-icons{
+    color: #eee;
+    font-size: 4rem;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1500;
+    display: none;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1) ;  
+}
+
+.logo{
+    width: 5rem;
+    height: 5rem;
+    background-color: #eb3007;
+    display: flex;
+    border-radius: 100%;
+    margin-right: 5rem;
+    
+}
+
+.logo i{
+    margin: auto;
+    font-size: 3rem;
+    color: #eee;
+}
+
+.nav-list{
+    width: 100%;
+    display: flex;
+    align-items: center;  
+}
+
+.nav-list li{
+    line-height: 8rem;
+    position: relative;
+}
+
+.sub-menu li{
+    line-height: 4rem;
+}
+
+.nav-list a{
+    display: block;
+    color: #eee;
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: color 650ms;
+
+}
+
+.nav-list a:hover{
+    color:#eb3007;
+}
+
+.btn{
+    padding: 1.3rem;
+    display: inline-block;
+    background-color:#eb3007 ;
+    border: 2px solid #eb3007;
+    border-radius: 5rem;
+    transition: background-color 650ms;
+}
+
+.btn:hover{
+    color: #eb3007;
+    background-color: rgba(0,0,0,.2);
+}
+
+.sub-menu{
+    width: 20rem;
+    display: block;
+    position: absolute;
+    border-top: 3px #eb3007 solid;
+    background-color: #191919;
+    z-index: 100;
+    top: 16rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 650ms ease;
+}
+
+.sub-menu:before{
+    content: '';
+    position: absolute;
+    top: -2.5rem;
+    left: 3rem;
+    border: 1.2rem transparent solid;
+    border-bottom-color:#eb3007 ;
+}
+
+.sub-menu .sub-menu{
+
+    border-top: none;
+    border-left: 3px solid #eb3007;
+    top: 0;
+    left: 160%;
+}
+
+.sub-menu .sub-menu::before{
+    top: .9rem;
+    left: -2.5rem;
+    border: 1.2rem solid transparent;
+    border-right-color:#eb3007 ;
+
+}
+
+.nav-list li:hover > .sub-menu{
+    top: 8rem;
+    opacity: 1;
+    visibility:visible;
+}
+
+.sub-menu li:hover > .sub-menu{
+    top: 0;
+    left: 100%;
+}
+
+li.move-right{
+    margin: auto 0 auto auto;
+    line-height: initial;
+}
+
+@media screen and (max-width:850px){
+
+    .nav-list{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: none;
+        flex-direction: column;
+        align-items: initial;
+        background-color: #191919;
+        z-index: 1000;
+
+    }
+
+    .nav-list > li{
+        line-height: 6rem;
+    }
+
+    .sub-menu{
+        position: initial;
+        border: 3px solid transparent;
+        border-left-color:#eb3007;
+        margin-left: 1rem;
+        max-height: 0;   
+    }
+
+    .sub-menu::before{
+        display: none;
+    }
+    
+    .nav-list li:hover > .sub-menu{
+        opacity: 1;
+        visibility: visible;
+        max-height: initial;
+    }
+
+    li.move-right{
+        margin: 0 auto 0 0;
+        line-height: initial;
+    }
+
+    .menu-icons{
+        display: block;
+    }
+
+    .ion-md-close{
+        display: none;
+    }
+
+    nav.active .ion-md-close{
+        display: block;
+    }
+
+    nav.active .ion-md-menu{
+        display: none;
+    }
+
+    nav.active .nav-list{
+        display: flex;
+    }
+}
+
+
+/*End nav css*/
+
+/*Hero*/
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+    url("images/bg.jpg") center no-repeat;
+    background-size: cover;
+}
+
+.text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    text-align: center;
+}
+
+.text h1{
+    font-size: 8rem;
+    margin: 2rem 0;
+    font-family: 'Blastimo', sans-serif;
+}
+
+.text h2{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.text p{
+    font-size: 1.6rem;
+    margin-bottom: 5rem;
+}
+
+.text .btn{
+    font-size: 1.6rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    color: #eee;
+    text-transform: uppercase;
+}
+
+
+.side-bar{
+    width: 6rem;
+    height: 41.5rem;
+    background-color: white;
+    top: 50%;
+    right: 5rem;
+    border-radius: 3px;
+    transform: translateY(-50%);
+    position: absolute; 
+}
+
+.side-box{
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px auto ;
+}
+
+.side-text{   
+    min-width: 0px;
+    height: 100%;
+    background: #eee ;
+    margin-right: 6.5px;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.side-icon{   
+    height: 100%;
+    cursor: pointer;
+    padding: 2px 2px;
+    display: flex;
+    color:#eb3007; 
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-icon:hover{
+    background: #eb3007;
+    color:white;
+}
+   
+.fas ,.fab{
+    min-width: 45px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 1px 4px;   
+    text-align: center;
+    transition: .2s;  
+    margin:auto; 
+
+}
+
+.side-box:hover .side-text{
+    min-width: 140px;
+    background: #eb3007;
+    color: white;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 830px){
+    .text h1{
+        font-size: 4rem;
+    }
+
+    .text .btn{
+        font-size: 1.2rem;
+    }
+
+    .side-bar{
+        transform: rotate(-90deg) translateX(-50%);
+        top: -7rem;
+        left: 45%;
+        width: 5rem;
+        height: 32.5rem;
+    }
+
+    .side-box{
+        height: 37px;
+    }
+    .side-text{
+        margin-right: 1px;
+    }
+   
+    .fas ,.fab{
+        font-size: 15px;
+        transform: rotate(90deg);
+    }
+}
